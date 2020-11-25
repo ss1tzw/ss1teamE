@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="utf-8">
+
+<body>
+    <div>
+    <script>
+        async function callapi() {
+            const res = await fetch("https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=b199de0d5a57bf7151f0829d3e089ee2&latitude=35.681382&longitude=139.76608399999998&range=1"); //コピーした自分のURLを入力
+            console.log(res);
+            const users = await res.json();
+            const rest = users.rest;
+            console.log(users);
+            Object.keys(rest).map(key => document.write('key:' + key + ' value:' + rest[key]["pr"]["pr_short"] + "<br>\n"));
+                document.write("Supported by ぐるなびWebService : https://api.gnavi.co.jp/api/scope/");
+        }
+        callapi();
+    </script>
+    </div>
+</body>
+</head>
+
+</html>
