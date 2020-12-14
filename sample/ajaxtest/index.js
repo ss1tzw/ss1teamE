@@ -11,7 +11,7 @@ async function fetchjson() {
         console.log(value);
     }
     const method = "post";
-    const filename = "index.php";
+    const filename = "insert.php";
     const res = await fetch(filename, {
         body,
         method
@@ -28,7 +28,7 @@ async function searchjson() {
         console.log(value);
     }
     const method = "post";
-    const filename = "search.php";
+    const filename = "select.php";
     const res = await fetch(filename, {
         body,
         method
