@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ルート設定</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjR3PU4Ma_8GhGu1l_MOlgiPBLsiTQIBs&language=ja&region=JP&libraries=places"></script>
+    <script type="module" src="./firebaseConfig.js"></script>
+    <script type="module" src="./authlogincheck.js"></script>
+    <script type="module" src="./authlogout.js"></script>
+    <script type="module" src="./route.js"></script>
+    <style>
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%
+        }
+
+        #map {
+            height: 100%;
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+    <button id="outbutton">ログアウト</button>
+    <h2>ルートの追加</h2>
+    <input id="routename" placeholder="ルート名を入力">
+    <div id="map">
+<!-- ここにgooglemap -->
+    </div>
+    <button id="delete">消去</button>
+    <button id="inbtn">追加</button>
+    <br>
+    <div id="names">
+       <!-- ここで名前設定 -->
+       
+    </div>
+    <br>
+    <button id="save">保存</button>
+</body>
+</html>

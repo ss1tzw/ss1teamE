@@ -1,15 +1,18 @@
 <?php
-if(!empty($_POST["uid"])){
-    $uid = $_POST["uid"];
-    $routeName = $_POST["routeName"];
+if(!empty($_POST["id"])){
+    $id = $_POST["id"];
  try {
      $dbh = new PDO('mysql:host=localhost;dbname=ordernavi;charset=utf8', "root", "");
-     $sql = "SELECT name,lat,lng FROM route WHERE uid = '".$uid."' AND routename = '".$routeName."'";
+     $sql = "SELECT uid,pinname,lat,lng,name FROM friendroute WHERE  id = '".$id."'";
      $res = $dbh->query($sql);
      foreach($res as $value){
         $data[] = $value;
     }
-    echo json_encode($data);
+    if (!isset($data)) {
+        echo json_encode("");
+    } else {
+        echo json_encode($data);
+    }
  }catch (PDOException $e) {
      echo json_encode($e);
      die();
