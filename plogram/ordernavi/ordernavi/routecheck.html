@@ -8,7 +8,6 @@
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
             .then((reg) => {
-                console.log('Service worker registered.', reg);
             });
     }
 </script>
@@ -40,7 +39,12 @@
 </head>
 
 <body>
-    <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    <header>
+        <h1 class="headline">
+            <a>ORDERNAVI</a>
+        </h1>
+        <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    </header>
     <br />
     <h2>ルートの確認</h2>
     <h2 id="routename">[ルート名が表示されます]</h2>

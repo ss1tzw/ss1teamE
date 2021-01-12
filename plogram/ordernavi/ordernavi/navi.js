@@ -1,32 +1,34 @@
 //インサート：ルート名一覧、選択したルート
 import logincheck from "./authlogincheck.js";
-import { getRoutename ,getRoute} from "./ajax.js";
+import { getRoutename, getRoute } from "./ajax.js";
 const setbtn = document.getElementById("routeset");
 const latList = [];
 const lngList = [];
 const nameList = [];
 let map;
 
-
-const locationOption ={ 
-  enableHighAccuracy: true
-}
+const locationOption = {
+  enableHighAccuracy: true,
+};
 const locationCheck = () => {
   //使えるか確認
   if (!navigator.geolocation) {
-    alert("この端末では位置情報が取得できません")
+    alert("この端末では位置情報が取得できません");
   }
 };
 
 const locationGet = () => {
   //現在地を取得
-  navigator.geolocation.getCurrentPosition(createMap,locationGeterr,locationOption);
+  navigator.geolocation.getCurrentPosition(
+    createMap,
+    locationGeterr,
+    locationOption
+  );
 };
 
 const locationGeterr = () => {
-  alert("位置情報の取得に失敗しました")
-}
-
+  alert("位置情報の取得に失敗しました");
+};
 
 const createMap = (postion) => {
   const latlng = {
@@ -53,7 +55,7 @@ const changeNowlocation = () => {
   navigator.geolocation.getCurrentPosition((postion) => {
     map.panTo(
       new google.maps.LatLng(postion.coords.latitude, postion.coords.longitude)
-    )
+    );
   });
 };
 
@@ -87,7 +89,7 @@ const clearMarkers = () => {
   latList.length = 0;
   lngList.length = 0;
   nameList.length = 0;
-}
+};
 
 const listIn = (routelist) => {
   clearMarkers();
@@ -99,28 +101,33 @@ const listIn = (routelist) => {
 };
 
 const createRoute = () => {
-  navigator.geolocation.getCurrentPosition((postion)=>{
-    const directionsService = new google.maps.DirectionsService();
-    const directionsRenderer = new google.maps.DirectionsRenderer();
-    const latlng1 = new google.maps.LatLng(postion.coords.latitude, postion.coords.longitude)
-    const latlng2 = new google.maps.LatLng(latList[0],lngList[0])
-    console.log(latlng1)
-    console.log(latlng2)
-    const request = {
-      origin: latlng1,        // 出発地点の緯度、経度
-      destination: latlng2,   // 到着地点の緯度、経度
-      travelMode: google.maps.DirectionsTravelMode.DRIVING // ルートの種類
-    };
-    directionsService.route(request, function(result, status) {
-      directionsRenderer.setDirections(result); // 取得したルートをセット
-      directionsRenderer.setMap(map); // ルートを地図に表示
-    });
-  },locationGeterr,locationOption)
-}
-const routeSet = async() => {
+  navigator.geolocation.getCurrentPosition(
+    (postion) => {
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const latlng1 = new google.maps.LatLng(
+        postion.coords.latitude,
+        postion.coords.longitude
+      );
+      const latlng2 = new google.maps.LatLng(latList[0], lngList[0]);
+
+      const request = {
+        origin: latlng1, // 出発地点の緯度、経度
+        destination: latlng2, // 到着地点の緯度、経度
+        travelMode: google.maps.DirectionsTravelMode.DRIVING, // ルートの種類
+      };
+      directionsService.route(request, function (result, status) {
+        directionsRenderer.setDirections(result); // 取得したルートをセット
+        directionsRenderer.setMap(map); // ルートを地図に表示
+      });
+    },
+    locationGeterr,
+    locationOption
+  );
+};
+const routeSet = async () => {
   const selectValue = document.getElementById("select").value;
   const routelist = await getRoute(selectValue);
-  console.log(routelist)
   listIn(routelist);
   createRoute();
 };
@@ -130,5 +137,3 @@ locationCheck();
 locationGet();
 firstSet();
 setbtn.addEventListener("click", routeSet);
-
-

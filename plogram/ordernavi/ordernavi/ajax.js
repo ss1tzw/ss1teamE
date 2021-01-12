@@ -1,8 +1,8 @@
-import {nameget, uidget} from "./authDataget.js";
+import { nameget, uidget } from "./authDataget.js";
 
 //アップロード
 
-export const setRoute = async (routeName, nameList, latList, lngList,id) => {
+export const setRoute = async (routeName, nameList, latList, lngList, id) => {
   const uid = uidget();
   const name = nameget();
   const body = new FormData();
@@ -11,15 +11,15 @@ export const setRoute = async (routeName, nameList, latList, lngList,id) => {
   body.append("nameList", nameList);
   body.append("latList", latList);
   body.append("lngList", lngList);
-  body.append("name",name);
-  body.append("id",id);
+  body.append("name", name);
+  body.append("id", id);
   const method = "post";
   const filename = "./php/sendRoute.php";
   const res = await fetch(filename, { body, method });
   const users = await res.json();
 };
 
-export const setFriendRoute = async ( nameList, latList, lngList,id) => {
+export const setFriendRoute = async (nameList, latList, lngList, id) => {
   const uid = uidget();
   const name = nameget();
   const body = new FormData();
@@ -27,16 +27,21 @@ export const setFriendRoute = async ( nameList, latList, lngList,id) => {
   body.append("nameList", nameList);
   body.append("latList", latList);
   body.append("lngList", lngList);
-  body.append("name",name);
-  body.append("id",id);
+  body.append("name", name);
+  body.append("id", id);
   const method = "post";
   const filename = "./php/friendrouteset.php";
   const res = await fetch(filename, { body, method });
   const users = await res.json();
 };
 
-export const updateRoute = async (routeName, nameList, latList, lngList,id) => {
-  console.log(nameList)
+export const updateRoute = async (
+  routeName,
+  nameList,
+  latList,
+  lngList,
+  id
+) => {
   const uid = uidget();
   const name = nameget();
   const body = new FormData();
@@ -46,7 +51,7 @@ export const updateRoute = async (routeName, nameList, latList, lngList,id) => {
   body.append("latList", latList);
   body.append("lngList", lngList);
   body.append("name", name);
-  body.append("id",id)
+  body.append("id", id);
   const method = "post";
   const filename = "./php/updateRoute.php";
   const res = await fetch(filename, { body, method });
@@ -56,7 +61,6 @@ export const updateRoute = async (routeName, nameList, latList, lngList,id) => {
 //取得
 export const getmyRoutename = async () => {
   const uid = uidget();
-  console.log(uid);
   const body = new FormData();
   body.append("uid", uid);
   const method = "post";
@@ -65,8 +69,6 @@ export const getmyRoutename = async () => {
   const users = await res.json();
   return users;
 };
-
-
 
 export const checkId = async (id) => {
   const body = new FormData();
@@ -78,12 +80,8 @@ export const checkId = async (id) => {
   return users;
 };
 
-
-
 export const getRoute = async (routeName) => {
-  console.log(routeName);
   const uid = uidget();
-  console.log(uid);
   const body = new FormData();
   body.append("uid", uid);
   body.append("routeName", routeName);
@@ -101,11 +99,9 @@ export const gethostidroute = async (id) => {
   const res = await fetch(filename, { body, method });
   const users = await res.json();
   return users;
-}
+};
 export const getmyidRoute = async (id) => {
   const uid = uidget();
-  console.log(uid);
-  console.log(id)
   const body = new FormData();
   body.append("uid", uid);
   body.append("id", id);
@@ -126,11 +122,9 @@ export const getAllidRoute = async (id) => {
   return users;
 };
 
-
 //削除
 export const deleteRoute = async (routeName) => {
   const uid = uidget();
-  console.log(uid);
   const body = new FormData();
   body.append("uid", uid);
   body.append("routeName", routeName);

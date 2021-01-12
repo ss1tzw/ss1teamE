@@ -13,7 +13,4 @@ export const nameget = () => {
     const name = user.displayName;
     return name;
   }
-}
-
-
-
+};

@@ -6,7 +6,6 @@ const logout = () => {
     })
     .catch(function (error) {
       // An error happened.
-      console.log("Err");
     });
 };
 

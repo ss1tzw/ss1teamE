@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<!-- ウェブアプリマニフェストの読み込み -->
-<link rel="manifest" href="manifest.json">
-<!-- ServiceWorkerの登録 -->
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then((reg) => {
-                console.log('Service worker registered.', reg);
-            });
+  <!-- ウェブアプリマニフェストの読み込み -->
+  <link rel="manifest" href="manifest.json" />
+  <!-- ServiceWorkerの登録 -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js").then((reg) => {});
     }
-</script>
+  </script>
 
-<head>
-    <link rel="stylesheet" href="./route.css">
+  <head>
+    <link rel="stylesheet" href="./route.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ルート設定</title>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjR3PU4Ma_8GhGu1l_MOlgiPBLsiTQIBs&language=ja&region=JP&libraries=places" charset="utf-8"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjR3PU4Ma_8GhGu1l_MOlgiPBLsiTQIBs&language=ja&region=JP&libraries=places"
+      charset="utf-8"
+    ></script>
     <script type="module" src="./friendRoute.js"></script>
     <style>
-        html {
-            height: 100%;
-        }
-        
-        body {
-            height: 100%;
-        }
-        
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
-</head>
+      html {
+        height: 100%;
+      }
 
-<body>
-    <button id="outbutton" class="btn btn--orange">ログアウト</button>
+      body {
+        height: 100%;
+      }
+
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="headline">
+        <a>ORDERNAVI</a>
+      </h1>
+      <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    </header>
+    <br />
     <br />
     <h2>ルート編集/追加（友人）</h2>
     <h2 id="routename">[ルート名が表示されます]</h2>
-    <input type="text" id="idText" placeholder="ここにIDを入力">
+    <input type="text" id="idText" placeholder="ここにIDを入力" />
     <button id="idbtn">決定</button>
     <br />
     <input id="search" placeholder="検索" />
     <button id="nowlocation">現在地</button>
     <div id="map">
-        <!-- ここにgooglemap -->
+      <!-- ここにgooglemap -->
     </div>
     <button id="delete">消去</button>
     <br />
     <div id="names">
-        <!-- ここで名前設定 -->
+      <!-- ここで名前設定 -->
     </div>
     <br />
     <button id="save">保存</button>
-</body>
-
+  </body>
 </html>

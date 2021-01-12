@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 header {
-    position: fixed;
+    position: static;
     height: 80px;
     width: 100%;
     padding: 15px 0;
@@ -26,14 +27,36 @@ header .btn {
     margin-right: 100px;
 }
 
+#nav ul li {
+    display: inline-block;
+    /*inline-blockにします*/
+    width: 45%;
+    /*幅も指定できる*/
+    padding: 5px 0;
+    /*余白も指定できる*/
+    margin: 10px 0;
+    /*余白も指定できる*/
+    vertical-align: middle;
+    /*縦の表示位置も指定できる*/
+}
+
+#nav ul li a {
+    display: block;
+    /*blockにします*/
+    padding: 15% 0;
+    /*余白も指定できる*/
+    font-weight: bold;
+    /*文字を太字に*/
+}
+
 .btn,
 a.btn,
 button.btn {
     font-size: 0.8rem;
     font-weight: 350;
     line-height: 1.5;
-    position: relative;
-    display: inline-block;
+    /* position: relative;
+    display: inline-block; */
     padding: 1rem 4rem;
     cursor: pointer;
     -webkit-user-select: none;
@@ -103,10 +126,30 @@ a.btn--orange2:hover {
         font-size: 20px;
         margin-right: 70px;
     }
+    #nav ul li {
+        display: inline-block;
+        /*inline-blockにします*/
+        width: 95%;
+        /*幅も指定できる*/
+        padding: 5px 0;
+        /*余白も指定できる*/
+        margin: 10px 0;
+        /*余白も指定できる*/
+        vertical-align: middle;
+        /*縦の表示位置も指定できる*/
+    }
+    #nav ul li a {
+        display: block;
+        /*blockにします*/
+        padding: 5% 0;
+        /*余白も指定できる*/
+        font-weight: normal
+        /*文字を通常に*/
+    }
     .btn,
     a.btn,
     button.btn {
-        font-size: 0.6rem;
+        font-size: 0.3rem;
         font-weight: 200;
         line-height: 1.5;
         position: relative;
@@ -154,26 +197,6 @@ a.btn--orange2:hover {
 
 @media screen and (max-width: 480px) {
     /* 480px以下に適用されるCSS（スマホ用） */
-    .box {
-        background: #ffc06e;
-        width: 100%;
-        height: 100px;
-        float: none;
-    }
-    .box p {
-        margin: 0;
-        padding: 0;
-    }
-    .box2 {
-        background: #ffa939;
-        width: 100%;
-        height: 100px;
-        float: none;
-    }
-    .box2 p {
-        margin: 0;
-        padding: 0;
-    }
     * {
         margin: 0;
         padding: 0;
@@ -197,10 +220,30 @@ a.btn--orange2:hover {
         font-size: 10px;
         margin-right: 40px;
     }
+    #nav ul li {
+        display: inline-block;
+        /*inline-blockにします*/
+        width: 95%;
+        /*幅も指定できる*/
+        padding: 5px 0;
+        /*余白も指定できる*/
+        margin: 10px 0;
+        /*余白も指定できる*/
+        vertical-align: middle;
+        /*縦の表示位置も指定できる*/
+    }
+    #nav ul li a {
+        display: block;
+        /*blockにします*/
+        padding: 5% 0;
+        /*余白も指定できる*/
+        font-weight: normal
+        /*文字を通常に*/
+    }
     .btn,
     a.btn,
     button.btn {
-        font-size: 0.4rem;
+        font-size: 0.2rem;
         font-weight: 100;
         line-height: 1.5;
         position: relative;

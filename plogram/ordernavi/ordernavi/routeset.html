@@ -40,7 +40,12 @@
 </head>
 
 <body>
-    <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    <header>
+        <h1 class="headline">
+            <a>ORDERNAVI</a>
+        </h1>
+        <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    </header>
     <br />
     <h2>ルートの追加</h2>
     <br />
@@ -50,13 +55,17 @@
     <div id="map">
         <!-- ここにgooglemap -->
     </div>
-    <button id="delete">消去</button>
+    <div id="nav">
+        <ul>
+            <li><button id="delete">消去</button></li>
+            <li><button id="save">保存</button></li>
+        </ul>
+    </div>
     <br />
     <div id="names">
         <!-- ここで名前設定 -->
     </div>
     <br />
-    <button id="save">保存</button>
 </body>
 
 </html>

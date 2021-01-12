@@ -4,6 +4,29 @@
     padding: 0px;
 }
 
+header {
+    position: static;
+    height: 80px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f56500;
+    color: white;
+}
+
+header .headline {
+    line-height: 100px;
+    float: left;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+header .btn {
+    line-height: 100px;
+    float: right;
+    font-size: 30px;
+    margin-right: 100px;
+}
+
 body {
     font-family: 'Exo', sans-serif;
     background: #ffb765;
@@ -42,15 +65,13 @@ button.btn {
 .btn--orange,
 a.btn--orange {
     color: #fff;
-    background-color: #ffa500;
-    float: right;
+    background-color: #ffc06e;
 }
 
 .btn--orange:hover,
 a.btn--orange:hover {
     color: #fff;
-    background: #ffb62d;
-    float: right;
+    background: #dfa860;
 }
 
 button {
@@ -65,7 +86,6 @@ button {
 
 a {
     color: #fff;
-    font-size: 0px;
 }
 
 @media screen and (max-width: 959px) {
@@ -73,6 +93,25 @@ a {
     * {
         margin: 0px;
         padding: 0px;
+    }
+    header {
+        height: 65px;
+        width: 100%;
+        padding: 12px 0;
+        background-color: #f56500;
+        color: white;
+    }
+    header .headline {
+        line-height: 70px;
+        float: left;
+        font-size: 25px;
+        margin-left: 70px;
+    }
+    header .btn {
+        line-height: 70px;
+        float: right;
+        font-size: 20px;
+        margin-right: 70px;
     }
     body {
         font-family: 'Exo', sans-serif;
@@ -109,14 +148,12 @@ a {
     .btn--orange,
     a.btn--orange {
         color: #fff;
-        background-color: #ffa500;
-        float: right;
+        background-color: #ffc06e;
     }
     .btn--orange:hover,
     a.btn--orange:hover {
         color: #fff;
-        background: #ffb62d;
-        float: right;
+        background: #dfa860;
     }
     button {
         font-size: 20px;
@@ -128,7 +165,6 @@ a {
     }
     a {
         color: #fff;
-        font-size: 0px;
     }
 }
 
@@ -137,6 +173,25 @@ a {
     * {
         margin: 0px;
         padding: 0px;
+    }
+    header {
+        height: 50px;
+        width: 100%;
+        padding: 9px 0;
+        background-color: #f56500;
+        color: white;
+    }
+    header .headline {
+        line-height: 40px;
+        float: left;
+        font-size: 20px;
+        margin-left: 40px;
+    }
+    header .btn {
+        line-height: 40px;
+        float: right;
+        font-size: 10px;
+        margin-right: 40px;
     }
     body {
         font-family: 'Exo', sans-serif;
@@ -173,14 +228,12 @@ a {
     .btn--orange,
     a.btn--orange {
         color: #fff;
-        background-color: #ffa500;
-        float: right;
+        background-color: #ffc06e;
     }
     .btn--orange:hover,
     a.btn--orange:hover {
         color: #fff;
-        background: #ffb62d;
-        float: right;
+        background: #dfa860;
     }
     button {
         font-size: 25px;
@@ -192,6 +245,5 @@ a {
     }
     a {
         color: #fff;
-        font-size: 0px;
     }
 }
