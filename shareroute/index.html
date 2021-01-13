@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- ウェブアプリマニフェストの読み込み -->
+<link rel="manifest" href="manifest.json" />
+<!-- ServiceWorkerの登録 -->
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("sw.js").then((reg) => {});
+    }
+</script>
+
+<head>
+    <link rel="stylesheet" href="index.css" />
+    <!-- アイコンの読み込み -->
+    <link rel="shortcut icon" href="favicon/favicon32.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script type="module" src="./index.js"></script>
+    <title>トップページ</title>
+</head>
+
+<body>
+    <div class="context">
+        <h1>ようこそ、ShareRouteへ！</h1>
+        <button id="start">使ってみる</button>
+    </div>
+
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

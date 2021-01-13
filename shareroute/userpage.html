@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ウェブアプリマニフェストの読み込み -->
+<link rel="manifest" href="manifest.json">
+<!-- ServiceWorkerの登録 -->
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then((reg) => {
+                console.log('Service worker registered.', reg);
+            });
+    }
+</script>
+
+<head>
+    <link rel="stylesheet" href="./userpage.css">
+    <!-- アイコンの読み込み -->
+    <link rel="shortcut icon" href="favicon/favicon32.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会員ページ</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script type="module" src="./userpage.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="headline">
+            <a>ShareRoute</a>
+        </h1>
+        <button id="outbutton" class="btn btn--orange">ログアウト</button>
+    </header>
+    <br/>
+    <div id="nav">
+        <ul>
+            <li><a href="./routeset.html" class="btn btn--orange2">ルート設定</a></li>
+            <li><a href="./routeedit.html" class="btn btn--orange2">ルート編集（自分）</a></li>
+            <li><a href="./friendRoute.html" class="btn btn--orange2">ルート編集/追加（友人）</a></li>
+            <li><a href="./routecheck.html" class="btn btn--orange2">ルート確認</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

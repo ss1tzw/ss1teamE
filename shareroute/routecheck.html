@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ウェブアプリマニフェストの読み込み -->
+<link rel="manifest" href="manifest.json">
+<!-- ServiceWorkerの登録 -->
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then((reg) => {});
+    }
+</script>
+
+<head>
+    <link rel="stylesheet" href="./route.css">
+    <!-- アイコンの読み込み -->
+    <link rel="shortcut icon" href="favicon/favicon32.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ルート設定</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjR3PU4Ma_8GhGu1l_MOlgiPBLsiTQIBs&language=ja&region=JP&libraries=places" charset="utf-8"></script>
+    <script type="module" src="./routecheck.js"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+        
+        body {
+            height: 100%;
+        }
+        
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button id="backbutton" onclick="location.href='./userpage.html'" class="btn btn--orange">戻る</button>
+        <button id="outbutton" class="btn btn--orange">ログアウト</button>
+        <h1 class="headline"><a>ShareRoute</a></h1>
+    </header>
+    <br />
+    <h2>ルートの確認</h2>
+    <h2 id="routename">[ルート名が表示されます]</h2>
+    <input type="text" id="idText" placeholder="ここにIDを入力">
+    <button id="idbtn">決定</button>
+    <br />
+    <input id="search" placeholder="検索" />
+    <button id="nowlocation">現在地</button>
+    <div id="map">
+        <!-- ここにgooglemap -->
+    </div>
+    </div>
+</body>
+
+</html>

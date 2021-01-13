@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ウェブアプリマニフェストの読み込み -->
+<link rel="manifest" href="manifest.json">
+<!-- ServiceWorkerの登録 -->
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then((reg) => {
+                console.log('Service worker registered.', reg);
+            });
+    }
+</script>
+
+<head>
+    <link rel="stylesheet" href="registration.css">
+    <!-- アイコンの読み込み -->
+    <link rel="shortcut icon" href="favicon/favicon32.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script type="module" src="./login.js"></script>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h1>ログイン</h1>
+        <form>
+            <div class="form-item">
+                <label for="email"></label>
+                <input id="textmail" type="email" name="email" required="required" placeholder="メールアドレス"></input>
+            </div>
+            <div class="form-item">
+                <label for="password"></label>
+                <input id="textpass" type="password" name="password" required="required" placeholder="パスワード"></input>
+            </div>
+        </form>
+        <div class="button-panel">
+            <input id="inbutton" class="button" title="ログイン" value="ログイン"></input>
+        </div>
+        <div class="form-footer">
+            <p><a href="registration.html">会員登録はこちら</a></p>
+        </div>
+    </div>
+</body>
+
+</head>
+
+</html>
+</body>
+
+</html>

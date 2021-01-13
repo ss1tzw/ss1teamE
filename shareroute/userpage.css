@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    position: static;
+    height: 80px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f56500;
+    color: white;
+}
+
+header .headline {
+    line-height: 100px;
+    float: left;
+    font-size: 30px;
+    margin-left: 100px;
+}
+
+header .btn {
+    line-height: 100px;
+    float: right;
+    font-size: 30px;
+    margin-right: 100px;
+}
+
+#nav ul li {
+    display: inline-block;
+    /*inline-blockにします*/
+    width: 45%;
+    /*幅も指定できる*/
+    padding: 5px 0;
+    /*余白も指定できる*/
+    margin: 10px 0;
+    /*余白も指定できる*/
+    vertical-align: middle;
+    /*縦の表示位置も指定できる*/
+}
+
+#nav ul li a {
+    display: block;
+    /*blockにします*/
+    padding: 15% 0;
+    /*余白も指定できる*/
+    font-weight: bold;
+    /*文字を太字に*/
+}
+
+.btn,
+a.btn,
+button.btn {
+    font-size: 0.8rem;
+    font-weight: 350;
+    line-height: 1.5;
+    /* position: relative;
+    display: inline-block; */
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+    color: #fff;
+    background-color: #ffc06e;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+    color: #fff;
+    background: #dfa860;
+}
+
+.btn--orange2,
+a.btn--orange2 {
+    color: #fff;
+    background-color: #ffc06e;
+    font-size: 24px;
+    width: auto;
+}
+
+.btn--orange2:hover,
+a.btn--orange2:hover {
+    color: #fff;
+    background: #dfa860;
+    font-size: 24px;
+    width: auto;
+}
+
+@media screen and (max-width: 959px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        height: 65px;
+        width: 100%;
+        padding: 12px 0;
+        background-color: #f56500;
+        color: white;
+    }
+    header .headline {
+        line-height: 70px;
+        float: left;
+        font-size: 25px;
+        margin-left: 70px;
+    }
+    header .btn {
+        line-height: 70px;
+        float: right;
+        font-size: 20px;
+        margin-right: 70px;
+    }
+    #nav ul li {
+        display: inline-block;
+        /*inline-blockにします*/
+        width: 95%;
+        /*幅も指定できる*/
+        padding: 5px 0;
+        /*余白も指定できる*/
+        margin: 10px 0;
+        /*余白も指定できる*/
+        vertical-align: middle;
+        /*縦の表示位置も指定できる*/
+    }
+    #nav ul li a {
+        display: block;
+        /*blockにします*/
+        padding: 5% 0;
+        /*余白も指定できる*/
+        font-weight: normal
+        /*文字を通常に*/
+    }
+    .btn,
+    a.btn,
+    button.btn {
+        font-size: 0.3rem;
+        font-weight: 200;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #212529;
+        border-radius: 0.5rem;
+    }
+    .btn--orange,
+    a.btn--orange {
+        color: #fff;
+        background-color: #ffc06e;
+    }
+    .btn--orange:hover,
+    a.btn--orange:hover {
+        color: #fff;
+        background: #dfa860;
+    }
+    .btn--orange2,
+    a.btn--orange2 {
+        color: #fff;
+        background-color: #ffc06e;
+        font-size: 36px;
+        width: 100%;
+    }
+    .btn--orange2:hover,
+    a.btn--orange2:hover {
+        color: #fff;
+        background: #dfa860;
+        font-size: 36px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        height: 50px;
+        width: 100%;
+        padding: 9px 0;
+        background-color: #f56500;
+        color: white;
+    }
+    header .headline {
+        line-height: 40px;
+        float: left;
+        font-size: 20px;
+        margin-left: 40px;
+    }
+    header .btn {
+        line-height: 40px;
+        float: right;
+        font-size: 10px;
+        margin-right: 40px;
+    }
+    #nav ul li {
+        display: inline-block;
+        /*inline-blockにします*/
+        width: 95%;
+        /*幅も指定できる*/
+        padding: 5px 0;
+        /*余白も指定できる*/
+        margin: 10px 0;
+        /*余白も指定できる*/
+        vertical-align: middle;
+        /*縦の表示位置も指定できる*/
+    }
+    #nav ul li a {
+        display: block;
+        /*blockにします*/
+        padding: 5% 0;
+        /*余白も指定できる*/
+        font-weight: normal
+        /*文字を通常に*/
+    }
+    .btn,
+    a.btn,
+    button.btn {
+        font-size: 0.2rem;
+        font-weight: 100;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block;
+        padding: 0.2rem 1rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+        color: #212529;
+        border-radius: 0.5rem;
+    }
+    .btn--orange,
+    a.btn--orange {
+        color: #fff;
+        background-color: #ffc06e;
+    }
+    .btn--orange:hover,
+    a.btn--orange:hover {
+        color: #fff;
+        background: #dfa860;
+    }
+    .btn--orange2,
+    a.btn--orange2 {
+        color: #fff;
+        background-color: #ffc06e;
+        font-size: 48px;
+        width: 100%;
+    }
+    .btn--orange2:hover,
+    a.btn--orange2:hover {
+        color: #fff;
+        background: #dfa860;
+        font-size: 48px;
+        width: 100%;
+    }
+}
