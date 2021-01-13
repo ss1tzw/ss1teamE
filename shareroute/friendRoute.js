@@ -219,6 +219,7 @@ const save = async () => {
     nameList.push(document.getElementById(i).value);
   }
   setFriendRoute(nameList, latList, lngList, id);
+  alert("上書き保存しました");
 };
 
 const changeNowlocation = () => {
