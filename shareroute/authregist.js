@@ -5,9 +5,13 @@ const authregist = (mailv, passv, pass2v, name) => {
       .then(() => {
         const user = Auth.currentUser;
         if (user !== null) {
-          user.updateProfile({
-            displayName: name,
-          });
+          user
+            .updateProfile({
+              displayName: name,
+            })
+            .then(() => {
+              location.href = "userpage.html";
+            });
         }
       })
       .catch((error) => {
